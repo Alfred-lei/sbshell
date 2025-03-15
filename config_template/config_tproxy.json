@@ -6,7 +6,7 @@
   },
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9091",
+      "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
       "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
@@ -24,23 +24,18 @@
       {
         "tag": "dns_direct",
         "address": "223.5.5.5",
-        "address_strategy": "ipv4_only",
-        "strategy": "ipv4_only",
         "detour": "🎯 全球直连"
       },
       {
         "tag": "dns_proxy",
         "address": "tls://8.8.8.8",
-        "address_strategy": "ipv4_only",
-        "strategy": "ipv4_only",
         "detour": "🚀 节点选择"
       }
     ],
     "rules": [
       {
         "outbound": "any",
-        "server": "dns_direct",
-        "disable_cache": true
+        "server": "dns_direct"
       },
       {
         "clash_mode": "Direct",
@@ -59,8 +54,7 @@
         "server": "dns_proxy"
       }
     ],
-    "final": "dns_proxy",
-    "strategy": "ipv4_only"
+    "final": "dns_proxy"
   },
   "inbounds": [
     {
@@ -363,6 +357,14 @@
     "default_mark": 666,
     "rules": [
       {
+        "port": 53,
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "protocol": "dns",
+        "outbound": "🎯 全球直连"
+      },
+      {
         "port": 5888,
         "outbound": "🎯 全球直连"
       },
@@ -371,19 +373,12 @@
         "outbound": "🎯 全球直连"
       },
       {
-        "action": "sniff"
-      },
-      {
         "clash_mode": "direct",
         "outbound": "🎯 全球直连"
       },
       {
         "clash_mode": "global",
         "outbound": "GLOBAL"
-      },
-      {
-        "protocol": "dns",
-        "outbound": "🎯 全球直连"
       },
       {
         "port": [80, 443],
