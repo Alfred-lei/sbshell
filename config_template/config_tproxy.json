@@ -79,10 +79,10 @@
    "default_mark": 666,
    "rules": 
    [
-     {"ip_cidr": ["192.168.0.0/16", "10.0.0.0/8"],"outbound": "🎯 全球直连"},
      {"action": "sniff"},
      {"protocol": "dns", "action": "hijack-dns"},
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
+     {"port": [5888, 6666, 3888], "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"},
