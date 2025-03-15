@@ -82,7 +82,6 @@
      {"action": "sniff"},
      {"protocol": "dns", "action": "hijack-dns"},
      {"port": 5888, "outbound": "🎯 全球直连"},  
-     {"destination": ["10.0.0.0/8"], "outbound": "🎯 全球直连"},  
      {"source": ["0.0.0.0/0"], "port": 5888, "outbound": "🎯 全球直连"},
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
