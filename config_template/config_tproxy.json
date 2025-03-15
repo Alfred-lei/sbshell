@@ -303,23 +303,23 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "final": "🎯 全球直连", // 默认所有流量走直连
+    "final": "🎯 全球直连", 
     "default_mark": 666,
     "rules": [
       {
-        "port": 5888, // 放行内网服务端口
+        "port": 5888, 
         "outbound": "🎯 全球直连"
       },
       {
-        "protocol": "bittorrent", // BT 流量走直连
+        "protocol": "bittorrent", 
         "outbound": "🎯 全球直连"
       },
       {
-        "action": "sniff" // 启用流量嗅探
+        "action": "sniff" 
       },
       {
-        "protocol": "dns", // DNS 请求不过滤端口，走原有 DNS 规则
-        "outbound": "dns_direct" // 与 dns.rules 保持一致
+        "protocol": "dns", 
+        "outbound": "dns_direct" 
       },
       {
         "clash_mode": "direct",
@@ -330,7 +330,7 @@
         "outbound": "GLOBAL"
       },
       {
-        "port": [53, 80, 443], // 仅常用端口应用以下域名分流规则
+        "port": [53, 80, 443], 
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -405,7 +405,7 @@
         "outbound": "🎯 全球直连"
       },
       {
-        "port": [53, 80, 443], // 常用端口未匹配域名时走 GLOBAL
+        "port": [53, 80, 443], 
         "outbound": "GLOBAL"
       }
     ],
