@@ -224,12 +224,18 @@
     {
       "tag": "🐸 手动切换",
       "type": "selector",
-      "outbounds": ["{all}"]
+      "outbounds": [
+        "🇭🇰 HK01",
+        "🇯🇵 JP01",
+        "🇺🇸 US01"
+      ]
     },
     {
       "tag": "🇭🇰 香港节点",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "🇭🇰 HK01"
+      ],
       "filter": [
         {
           "action": "include",
@@ -240,7 +246,9 @@
     {
       "tag": "🇯🇵 日本节点",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "🇯🇵 JP01"
+      ],
       "filter": [
         {
           "action": "include",
@@ -251,7 +259,9 @@
     {
       "tag": "🇺🇲 美国节点",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "🇺🇸 US01"
+      ],
       "filter": [
         {
           "action": "include",
@@ -266,7 +276,9 @@
     {
       "tag": "🔯 香港自动",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "🇭🇰 HK01"
+      ],
       "filter": [
         {
           "action": "include",
@@ -280,7 +292,11 @@
     {
       "tag": "♻️ 自动选择",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "🇭🇰 HK01",
+        "🇯🇵 JP01",
+        "🇺🇸 US01"
+      ],
       "filter": [
         {
           "action": "exclude",
@@ -294,32 +310,72 @@
     {
       "tag": "GLOBAL",
       "type": "selector",
-      "outbounds": ["{all}"]
+      "outbounds": [
+        "🇭🇰 HK01",
+        "🇯🇵 JP01",
+        "🇺🇸 US01"
+      ]
     },
     {
       "tag": "🎯 全球直连",
       "type": "direct"
+    },
+    {
+      "tag": "🇭🇰 HK01",
+      "type": "trojan",
+      "server": "tapdns.wnwwv.cn",
+      "server_port": 48333,
+      "password": "b98d6aa8-bf79-4c17-9fb0-158d58ea84cf",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "wz.cloudfisher.xyz"
+      }
+    },
+    {
+      "tag": "🇯🇵 JP01",
+      "type": "trojan",
+      "server": "tapdns.wnwwv.cn",
+      "server_port": 32484,
+      "password": "b98d6aa8-bf79-4c17-9fb0-158d58ea84cf",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "wz.cloudfisher.xyz"
+      }
+    },
+    {
+      "tag": "🇺🇸 US01",
+      "type": "trojan",
+      "server": "tapdns.wnwwv.cn",
+      "server_port": 27306,
+      "password": "b98d6aa8-bf79-4c17-9fb0-158d58ea84cf",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "wz.cloudfisher.xyz"
+      }
     }
   ],
   "route": {
     "auto_detect_interface": true,
-    "final": "🎯 全球直连", 
+    "final": "🎯 全球直连",
     "default_mark": 666,
     "rules": [
       {
-        "port": 5888, 
+        "port": 5888,
         "outbound": "🎯 全球直连"
       },
       {
-        "protocol": "bittorrent", 
+        "protocol": "bittorrent",
         "outbound": "🎯 全球直连"
       },
       {
-        "action": "sniff" 
+        "action": "sniff"
       },
       {
-        "protocol": "dns", 
-        "outbound": "dns_direct" 
+        "protocol": "dns",
+        "outbound": "dns_direct"
       },
       {
         "clash_mode": "direct",
@@ -330,7 +386,7 @@
         "outbound": "GLOBAL"
       },
       {
-        "port": [53, 80, 443], 
+        "port": [53, 80, 443],
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -405,8 +461,8 @@
         "outbound": "🎯 全球直连"
       },
       {
-        "port": [53, 80, 443], 
-        "outbound": "GLOBAL"
+        "port": [53, 80, 443],
+        "outbound": "🚀 节点选择" 
       }
     ],
     "rule_set": [
