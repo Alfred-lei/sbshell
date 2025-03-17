@@ -25,12 +25,12 @@
     "servers": [
       {
         "tag": "local",
-        "address": "127.0.0.1:53", // 指向 AdGuard Home
+        "address": "127.0.0.1:53", 
         "detour": "🎯 全球直连"
       },
       {
         "tag": "remote",
-        "address": "tls://8.8.8.8", // 备用上游，走代理
+        "address": "tls://8.8.8.8", 
         "address_strategy": "ipv4_only",
         "strategy": "ipv4_only",
         "detour": "🚀 节点选择"
@@ -69,7 +69,7 @@
       "tag": "tproxy-in",
       "listen": "0.0.0.0",
       "listen_port": 7895,
-      "sniff": true // 添加嗅探功能，避免不必要劫持
+      "sniff": true 
     }
   ],
 
