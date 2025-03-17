@@ -59,7 +59,7 @@
         "server": "remote"
       }
     ],
-    "final": "local", // 默认走 AdGuard Home
+    "final": "local", 
     "strategy": "ipv4_only"
   },
 
