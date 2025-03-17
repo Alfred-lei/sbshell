@@ -7,7 +7,7 @@
   
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9095",
+      "external_controller": "0.0.0.0:9093",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
       "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
@@ -21,12 +21,14 @@
     }
   },
 
-  "dns": {
+  "dns": 
+  {
     "servers": [
       {"tag": "dns_direct", "address": "127.0.0.1:53", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
       {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
     ],
-    "rules": [
+    "rules": 
+    [
       {"protocol": "dns", "server": "dns_direct"},
       {"outbound": "any", "server": "dns_direct", "disable_cache": true},
       {"clash_mode": "Direct", "server": "dns_direct"},
@@ -71,11 +73,13 @@
     { "tag": "🎯 全球直连", "type": "direct" }
   ],
   
-  "route": {
+  "route": 
+  {
     "auto_detect_interface": true,
     "final": "🐠 漏网之鱼",
     "default_mark": 666,
-    "rules": [
+    "rules": 
+    [
       {"action": "sniff"},
       {"protocol": "dns", "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
