@@ -44,8 +44,8 @@
       "tag": "tproxy-in",
       "listen": "0.0.0.0",
       "listen_port": 7895,
-      "sniff": true
-      "dns_hijack": ["127.0.0.1:53"]
+      "sniff": true,
+      "dns_hijack": ["udp://127.0.0.1:53"]
     }
   ],
 
