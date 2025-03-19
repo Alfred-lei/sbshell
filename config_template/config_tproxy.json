@@ -25,7 +25,7 @@
     "servers": [
       {"tag": "local-dns", "address": "127.0.0.1", "detour": "🎯 全球直连"},
       {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
-      {"tag": "dns_proxy", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
+      {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
     ],
     "rules": [
       {"outbound": "any", "server": "local-dns", "disable_cache": true},
@@ -34,7 +34,7 @@
       {"rule_set": "geosite-cn", "server": "dns_direct"},
       {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
     ],
-    "final": "local-dns",
+    "final": "dns_proxy",
     "strategy": "ipv4_only"
   },
 
@@ -44,8 +44,7 @@
       "tag": "tproxy-in",
       "listen": "0.0.0.0",
       "listen_port": 7895,
-      "sniff": true,
-      "dns_hijack": ["udp://127.0.0.1:53"]
+      "sniff": true
     }
   ],
 
@@ -78,6 +77,7 @@
     "default_mark": 666,
     "rules": [
       {"action": "sniff"},
+      {"protocol": "dns", "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
