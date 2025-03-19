@@ -7,7 +7,7 @@
   
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9999",
+      "external_controller": "0.0.0.0:9090",
       "secret": "910615",
       "default_mode": "rule"
     },
