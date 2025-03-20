@@ -23,7 +23,7 @@
 
   "dns": {
     "servers": [
-      {"tag": "local-dns", "address": "10.0.0.2", "detour": "🎯 全球直连"},
+      {"tag": "local-dns", "address": "127.0.0.1", "detour": "🎯 全球直连"},
       {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
       {"tag": "dns_proxy", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
     ],
