@@ -39,8 +39,8 @@
 
   "inbounds": [
     {
-      "type": "proxy",
-      "tag": "proxy-in",
+      "type": "tproxy",
+      "tag": "tproxy-in",
       "listen": "0.0.0.0",
       "listen_port": 7895
     }
