@@ -39,8 +39,8 @@
 
   "inbounds": [
     {
-      "type": "dns",
-      "tag": "dns-in",
+      "type": "proxy",
+      "tag": "proxy-in",
       "listen": "0.0.0.0",
       "listen_port": 7895
     }
